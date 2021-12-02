@@ -1,0 +1,31 @@
+{
+    "name" :  "The Incog Advisor",
+    "description" : "Extension For Ensuring Online Privacy",
+    "version" : "0.0.1",
+    "manifest_version" : 2,
+    "icons":{
+        "128" : "./icon.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./content.js"]
+        }
+      ],
+    "background" : {
+        "scripts" : ["./background.js"]
+    },
+    "options_page" : "./options.html",
+    "browser_action" : {
+        "default_popup" : "./popup.html"
+    },
+    "permissions" : [
+        "tabs",
+        "cookies",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "web_accessible_resources": [
+        "files/cookie.json"
+    ]
+}
